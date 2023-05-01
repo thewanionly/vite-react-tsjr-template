@@ -85,7 +85,36 @@ In `main.tsx`, the `GlobalStyles` component should be one of the Theme component
 
 ## Fonts (Typography)
 
-TODO:
+1. Go to https://fonts.google.com/ and find your desired fonts there. Make sure you add the different font weights and styles (Regular, Bold), that is needed in your project.
+2. To embed the font in your web app, copy the code provided in the right sidebar. It should be something like this:
+
+```
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+```
+
+3. Paste copied code in `index.html`. Place it inside the `<head>` tag, right below the `<title>` tag.
+4. Finally, to use the font in your codebase, copy the css code from fonts.google (still in the right sidebar) and paste it in your typography files and use it in your theme object. The css code should look something like this:
+
+```
+font-family: 'Space Mono', monospace;
+```
+
+## Assets
+
+Add your images and icons under `src/assets` folder. It's ideal that you create a separate repository for images and icons. Here's my attempt to differentiate the two of them:
+
+- images
+  - generally are realistic and depicts real-world objects
+  - larger than icons
+  - commonly jpg or png files but svg files could be images as well
+  - if using svg as image, the colors of an image should not change depending on user actions (e.g. hover) or any state updates
+- icons
+  - generally are non-realistic and represents an idea about something
+  - smaller than images
+  - use svg for icons (perferred)
+  - the colors of an svg may change depending on user actions (e.g. hover) or any state updates
 
 ## Contributing
 
