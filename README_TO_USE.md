@@ -69,9 +69,9 @@ Helpful links to follow as guide: TODO:
 
 ### Theme
 
-You can your colors, typography, and breakpoints in `src/styles/variables` folder. The variable names should attempt to be describing the values as is, and not the meaning of the value.
+You can your colors, typography, and breakpoints in `src/styles/variables` folder. The variable names should attempt to be describing the values as is, and not the meaning of the value. To help you in finding the name of the color, use this tool: https://colors.artyclick.com/color-shades-finder?color=#70E6D2. Use `hsl` values for your color.
 
-In `src/styles/theme/theme.ts`, use the variables created above and this time, the theme properties should be describing the meaning or usage of the variables in the context of your application. For example, the color `#FFF` should be named `white` in your varialbes but in theme, it could be named as `bodyText`, suggesting this color is used for body text.
+In `src/styles/theme/theme.ts`, use the variables created above and this time, the theme properties should be describing the meaning or usage of the variables in the context of your application. For example, the color hsl(0, 0%, 100%) should be named `white` in your varialbes but in theme, it could be named as `bodyText`, suggesting this color is used for body text.
 
 In `src/styles/theme/styled.d.ts`, add the type definition of your theme object and declare the properties of the theme interface.
 

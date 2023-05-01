@@ -1,3 +1,3 @@
 export const COLORS = {
-  white: '#FFFFFF',
+  white: 'hsl(0, 0%, 100%)',
 } as const
