@@ -65,6 +65,28 @@ All source codes live in the `src` folder. Here's how I structured the different
 
 Helpful links to follow as guide: TODO:
 
+## Theme and Global Styles
+
+### Theme
+
+You can your colors, typography, and breakpoints in `src/styles/variables` folder. The variable names should attempt to be describing the values as is, and not the meaning of the value.
+
+In `src/styles/theme/theme.ts`, use the variables created above and this time, the theme properties should be describing the meaning or usage of the variables in the context of your application. For example, the color `#FFF` should be named `white` in your varialbes but in theme, it could be named as `bodyText`, suggesting this color is used for body text.
+
+In `src/styles/theme/styled.d.ts`, add the type definition of your theme object and declare the properties of the theme interface.
+
+In `main.tsx`, the App component should be wrapped with `Theme` component.
+
+### Global styles
+
+You can add your global styles, including css reset styles, in `src/styles/global.ts`.
+
+In `main.tsx`, the `GlobalStyles` component should be one of the Theme component's children and sibling to your App component.
+
+## Fonts (Typography)
+
+TODO:
+
 ## Contributing
 
 We are using `husky` to run a pre-commit hook whenever we commit and `commitizen` to standardize commit messages. Ideally whenever you want to commit your staged files, you would just run `git cz` or just `cz` and you will be prompted a series of steps to input your commit message in the terminal. After that, the pre-commit hook will run. The issue with this is that whenever the pre-commit hook fails, you will lose your commit message, which you may have not saved somewhere else. So what we really want is whenever we run `cz`, the pre-commit hook should run first and if it succeeded, that's the only time the commit message prompt will be shown. There's really no progress with this issue yet: https://github.com/commitizen/cz-cli/issues/604.
