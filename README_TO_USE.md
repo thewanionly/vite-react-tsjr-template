@@ -116,6 +116,29 @@ Add your images and icons under `src/assets` folder. It's ideal that you create 
   - use svg for icons (perferred)
   - the colors of an svg may change depending on user actions (e.g. hover) or any state updates
 
+## Website title and favicons
+
+### Website title
+
+To change the website title, go to your index.html file and change the text enclosed in the title tag.
+
+### Favicon
+
+1. Go to https://favicon.io/. This will generate a favicon folder for you based from an image, text, or emoji.
+2. Download the favicon folder and extract its content.
+3. In your root, create a `public` folder.
+4. Inside the `public` folder, place the extracted folder and rename the folder to `favicon`.
+5. Update the `site.webmanifest` file. Add your site's name. Prepend `favicon` in the image paths.
+6. In the `head` tag of your `index.html`, below the `title` tag, past the ff:
+
+```html
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+<link rel="icon" href="/favicon/favicon.ico" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+```
+
 ## Contributing
 
 We are using `husky` to run a pre-commit hook whenever we commit and `commitizen` to standardize commit messages. Ideally whenever you want to commit your staged files, you would just run `git cz` or just `cz` and you will be prompted a series of steps to input your commit message in the terminal. After that, the pre-commit hook will run. The issue with this is that whenever the pre-commit hook fails, you will lose your commit message, which you may have not saved somewhere else. So what we really want is whenever we run `cz`, the pre-commit hook should run first and if it succeeded, that's the only time the commit message prompt will be shown. There's really no progress with this issue yet: https://github.com/commitizen/cz-cli/issues/604.
