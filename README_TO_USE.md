@@ -63,8 +63,6 @@ All source codes live in the `src` folder. Here's how I structured the different
 - `views`
   - This can also be called "pages" (or could be a separate folder as well). The main entry point or container component for each of your view or page lives here. The `App.tsx` file also lives here.
 
-Helpful links to follow as guide: TODO:
-
 ## Theme and Global Styles
 
 ### Theme
@@ -115,6 +113,40 @@ Add your images and icons under `src/assets` folder. It's ideal that you create 
   - smaller than images
   - use svg for icons (perferred)
   - the colors of an svg may change depending on user actions (e.g. hover) or any state updates
+
+## Displaying svg assets
+
+There are multiple ways of showing svg icons/images in our application.
+
+1. Using `<img>` tag
+
+```TSX
+import imageSvg from "assets/images/image.svg";
+
+const App = () => {
+  return (
+    <div className="App">
+      <img src={imageSvg} alt="Your SVG" />
+    </div>
+  );
+};
+```
+
+2. Using svgs as React Components
+
+To support this, we are using the Vite plugin for SVGR.
+
+```TSX
+import { ReactComponent as ImageSvg } from "assets/images/image.svg";
+
+const App = () => {
+  return (
+    <div className="App">
+      <ImageSvg />
+    </div>
+  );
+};
+```
 
 ## Website title and favicons
 
